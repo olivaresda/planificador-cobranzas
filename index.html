@@ -29,18 +29,24 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
-        .modal-backdrop {
+        .modal-backdrop, #pdf-loader {
             transition: opacity 0.3s ease;
+            background-color: rgba(0,0,0,0.7);
         }
         .input-error {
             border-color: #ef4444; /* red-500 */
         }
-        #pdf-loader {
-            background-color: rgba(0,0,0,0.7);
-        }
-        #actionTooltip {
+        #actionTooltip, #costMenu {
             pointer-events: none;
             line-height: 1.5;
+            transition: opacity 0.2s;
+        }
+        .cost-menu-item {
+            cursor: pointer;
+        }
+        .cost-menu-item:hover {
+            background-color: #4f46e5; /* indigo-600 */
+            color: white;
         }
     </style>
 </head>
@@ -50,8 +56,8 @@
 
         <!-- Panel de Controles (Izquierda) -->
         <aside class="w-full lg:w-2/5 xl:w-1/3 bg-white p-8 border-r border-gray-200 shadow-lg overflow-y-auto">
-            <div class="flex items-center mb-6">
-                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAEAAYADASIAAhEBAxEB/8QAGwABAAIDAQEAAAAAAAAAAAAAAAUGAwQHAgH/xAA+EAABAwMCAgQKBwcFAAAAAAABAAIDBAUGEQcSITFBURMUImFxkZLRFRYjMoGhscEIM0JTYnTh8CRDUqKy/8QAFwEBAQEBAAAAAAAAAAAAAAAAAAECA//EAB4RAQEBAQACAwEBAQAAAAAAAAABEQISITFBUWET/9oADAMBAAIRAxEAPwD7UREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBER.../" alt="Logo de Recover" class="h-12 mr-4">
+            <div class="flex items-center mb-8">
+                <img src="https://storage.googleapis.com/gemini-generative-ai-dev-public-prod/v1/files/3b552258284534a6873c0993952f01f8" alt="Logo de Recover" class="h-12 mr-4">
                 <h1 class="text-2xl font-bold text-gray-800">Planificador</h1>
             </div>
 
@@ -91,9 +97,19 @@
                             </select>
                             <input type="text" id="customPortfolioSegment" placeholder="Escriba el segmento" class="w-full p-2 mt-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 hidden">
                         </div>
-                        <div>
+                        <div id="cost-container" class="relative">
                             <label for="actionCost" class="block text-sm font-medium text-gray-600 mb-1">Costo (USD)</label>
                             <input type="number" id="actionCost" placeholder="Ej: 150.00" class="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                             <!-- Menú de costos flotante -->
+                            <div id="costMenu" class="hidden absolute z-10 w-full bg-white border border-gray-300 rounded-md shadow-lg mt-1">
+                                <div class="py-1">
+                                    <a href="#" class="cost-menu-item block px-4 py-2 text-sm text-gray-700" data-cost="2.00">100 SMS: $2.00</a>
+                                    <a href="#" class="cost-menu-item block px-4 py-2 text-sm text-gray-700" data-cost="2.00">100 WhatsApp: $2.00</a>
+                                    <a href="#" class="cost-menu-item block px-4 py-2 text-sm text-gray-700" data-cost="8.00">Hora de Clones: $8.00</a>
+                                    <a href="#" class="cost-menu-item block px-4 py-2 text-sm text-gray-700" data-cost="8.50">Hora Llamada Humano: $8.50</a>
+                                    <a href="#" class="cost-menu-item block px-4 py-2 text-sm text-gray-700" data-cost="4.00">100k Mails: $4.00</a>
+                                </div>
+                            </div>
                         </div>
                         <button id="addActionBtn" class="w-full bg-indigo-600 text-white font-bold py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors">
                             <i class="fas fa-plus-circle mr-2"></i>Añadir al Calendario
@@ -113,8 +129,8 @@
         </aside>
 
         <!-- Calendario (Derecha) -->
-        <main id="calendar-main" class="w-full lg:w-3/5 xl:w-2/3 p-6 flex flex-col">
-            <header class="flex justify-between items-center mb-4 flex-wrap gap-4">
+        <main id="calendar-main" class="w-full lg:w-3/5 xl:w-2/3 p-6 flex flex-col bg-gray-100">
+            <header class="flex justify-between items-center mb-4 flex-wrap gap-4 bg-white p-4 rounded-lg shadow">
                 <div class="flex items-center space-x-4">
                     <button id="prevMonthBtn" class="p-2 rounded-full hover:bg-gray-200 transition-colors"><i class="fas fa-chevron-left text-gray-600"></i></button>
                     <h2 id="currentMonthYear" class="text-2xl font-bold text-gray-800 w-48 text-center"></h2>
@@ -130,10 +146,10 @@
                     <button id="todayBtn" class="bg-white border border-gray-300 text-gray-700 font-semibold py-2 px-4 rounded-md hover:bg-gray-100 transition-colors">Hoy</button>
                 </div>
             </header>
-            <div class="grid grid-cols-7 gap-4 text-center font-semibold text-sm text-gray-500 mb-2">
+            <div class="grid grid-cols-7 gap-4 text-center font-semibold text-sm text-gray-500 mb-2 px-2">
                 <div>Dom</div><div>Lun</div><div>Mar</div><div>Mié</div><div>Jue</div><div>Vie</div><div>Sáb</div>
             </div>
-            <div id="calendarGrid" class="calendar-grid flex-grow">
+            <div id="calendarGrid" class="calendar-grid flex-grow bg-white p-2 rounded-lg">
                 <!-- Los días del calendario se generarán aquí -->
             </div>
         </main>
@@ -192,6 +208,9 @@
             const exportPdfBtn = document.getElementById('exportPdfBtn');
             const pdfLoader = document.getElementById('pdf-loader');
             const actionTooltip = document.getElementById('actionTooltip');
+            const costContainer = document.getElementById('cost-container');
+            const costMenu = document.getElementById('costMenu');
+            const actionCostInput = document.getElementById('actionCost');
             
             // Modal
             const deleteModal = document.getElementById('deleteModal');
@@ -271,6 +290,7 @@
                         const actionConfig = actionIcons[action.type] || { icon: 'fas fa-question', color: 'bg-gray-400' };
                         const actionEl = document.createElement('div');
                         actionEl.className = `action-card text-white text-xs p-1.5 rounded-md flex items-center justify-between cursor-pointer ${actionConfig.color}`;
+                        actionEl.dataset.actionId = action.id; // Store action ID for tooltip
                         actionEl.innerHTML = `
                             <div class="flex items-center overflow-hidden">
                                 <i class="${actionConfig.icon} mr-2 flex-shrink-0"></i>
@@ -280,25 +300,6 @@
                                 <i class="fas fa-times-circle"></i>
                             </button>
                         `;
-                        
-                        // Event listeners for tooltip
-                        actionEl.addEventListener('mouseover', () => {
-                            actionTooltip.innerHTML = `
-                                <strong class="font-bold">Cartera:</strong> ${action.name}<br>
-                                <strong class="font-bold">Acción:</strong> ${action.type}<br>
-                                <strong class="font-bold">Segmento:</strong> ${action.segment}<br>
-                                <strong class="font-bold">Costo:</strong> $${(action.cost || 0).toFixed(2)}
-                            `;
-                            actionTooltip.classList.remove('hidden');
-                        });
-                        actionEl.addEventListener('mousemove', (e) => {
-                            actionTooltip.style.left = `${e.pageX + 15}px`;
-                            actionTooltip.style.top = `${e.pageY + 15}px`;
-                        });
-                        actionEl.addEventListener('mouseout', () => {
-                            actionTooltip.classList.add('hidden');
-                        });
-
                         actionsContainer.appendChild(actionEl);
                     });
 
@@ -351,8 +352,9 @@
                 renderCalendar();
                 updateCost();
                 
+                // Clear form fields
                 portfolioNameInput.value = '';
-                document.getElementById('actionCost').value = '';
+                actionCostInput.value = '';
                 customPortfolioSegmentInput.value = '';
                 portfolioSegmentSelect.value = 'Toda la Cartera';
                 customPortfolioSegmentInput.classList.add('hidden');
@@ -390,16 +392,18 @@
                 const imgData = canvas.toDataURL('image/png');
                 const pdf = new jsPDF({ orientation: 'landscape', unit: 'px', format: [canvas.width, canvas.height] });
 
-                // Página 1: Vista de Calendario
+                // Page 1: Calendar View
                 pdf.addImage(imgData, 'PNG', 0, 0, canvas.width, canvas.height);
                 
-                // --- Página 2: Detalle de Acciones ---
+                // Page 2: Detailed List
                 const year = currentDate.getFullYear();
                 const month = currentDate.getMonth();
-                const actionsForMonth = actions.filter(a => {
+                const actionsForMonth = (selectedPortfolioFilter === 'all' 
+                    ? actions 
+                    : actions.filter(a => a.name === selectedPortfolioFilter)
+                ).filter(a => {
                     const actionDate = new Date(a.date + 'T00:00:00');
-                    const isSamePortfolio = selectedPortfolioFilter === 'all' || a.name === selectedPortfolioFilter;
-                    return actionDate.getFullYear() === year && actionDate.getMonth() === month && isSamePortfolio;
+                    return actionDate.getFullYear() === year && actionDate.getMonth() === month;
                 });
 
                 if (actionsForMonth.length > 0) {
@@ -410,6 +414,7 @@
                     let yPos = 20;
                     const pageHeight = pdf.internal.pageSize.height;
                     const margin = 20;
+                    const lineHeight = 12;
 
                     pdf.setFontSize(16);
                     const filterText = selectedPortfolioFilter === 'all' ? 'Todas las Carteras' : selectedPortfolioFilter;
@@ -417,13 +422,13 @@
                     yPos += 8;
                     pdf.setFontSize(12);
                     pdf.text(`Cartera: ${filterText}`, margin, yPos);
-                    yPos += 15;
+                    yPos += 20;
 
                     pdf.setFontSize(10);
                     let lastDay = null;
 
                     actionsForMonth.forEach(action => {
-                        if (yPos > pageHeight - margin) {
+                        if (yPos > pageHeight - margin * 2) { // Check for page break
                             pdf.addPage('a4', 'portrait');
                             yPos = margin;
                         }
@@ -433,14 +438,20 @@
                             yPos += 5;
                             pdf.setFont(undefined, 'bold');
                             pdf.text(`Día ${day}`, margin, yPos);
-                            yPos += 8;
+                            yPos += 10;
                             lastDay = day;
                             pdf.setFont(undefined, 'normal');
                         }
 
-                        const line = `• [${action.type}] ${action.name} - ${action.segment} (Costo: $${(action.cost || 0).toFixed(2)})`;
-                        pdf.text(line, margin + 5, yPos);
-                        yPos += 7;
+                        const actionDetails = [
+                            `Cartera: ${action.name}`,
+                            `Tipo: ${action.type}`,
+                            `Segmento: ${action.segment}`,
+                            `Costo: $${(action.cost || 0).toFixed(2)}`
+                        ];
+                        
+                        pdf.text(actionDetails, margin + 5, yPos);
+                        yPos += (actionDetails.length * 5) + 5; // Adjust spacing
                     });
                 }
                 
@@ -483,6 +494,21 @@
             });
             
             exportPdfBtn.addEventListener('click', handleExportPDF);
+
+            // Cost menu logic
+            costContainer.addEventListener('mouseenter', () => {
+                costMenu.classList.remove('hidden');
+            });
+            costContainer.addEventListener('mouseleave', () => {
+                costMenu.classList.add('hidden');
+            });
+            costMenu.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (e.target.classList.contains('cost-menu-item')) {
+                    actionCostInput.value = e.target.dataset.cost;
+                    costMenu.classList.add('hidden');
+                }
+            });
 
             // --- INICIALIZACIÓN ---
             saveActions();
